@@ -3,6 +3,7 @@ package haqnawaz.org.a20220815db;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.text.Editable;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -16,7 +17,7 @@ import java.util.List;
 public class MainActivity extends AppCompatActivity {
 
     Button buttonAdd, buttonViewAll, buttonDel;
-    EditText editName, editRollNumber;
+    EditText editName, editRollNumber,delID;
     Switch switchIsActive;
     ListView listViewStudent;
     @Override
@@ -29,6 +30,7 @@ public class MainActivity extends AppCompatActivity {
         buttonDel = findViewById(R.id.buttonDel);
         editName = findViewById(R.id.editTextName);
         editRollNumber = findViewById(R.id.editTextRollNumber);
+        delID = findViewById(R.id.getIDofDel);
         switchIsActive = findViewById(R.id.switchStudent);
         listViewStudent = findViewById(R.id.listViewStudent);
 
@@ -65,7 +67,11 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 DBHelper dbHelper = new DBHelper(MainActivity.this);
-                Toast.makeText(MainActivity.this,"Are you sure?",Toast.LENGTH_SHORT).show();
+                Editable id = delID.getText();
+                if(dbHelper.delStudent(id))
+                    Toast.makeText(MainActivity.this,"Record deleted",Toast.LENGTH_SHORT).show();
+                else
+                    Toast.makeText(MainActivity.this,"ID not found",Toast.LENGTH_SHORT).show();
             }
         });
 
