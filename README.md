@@ -1,3 +1,3 @@
-# Deleting-Record-SQLite
+# Deleting-Updating-Record-SQLite
 
-Deleting a record in SQLite
+Deleting and Updating a record in SQLite
