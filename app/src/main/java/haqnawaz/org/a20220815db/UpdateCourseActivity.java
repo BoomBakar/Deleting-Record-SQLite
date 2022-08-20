@@ -34,14 +34,14 @@ public class UpdateCourseActivity extends AppCompatActivity {
 
         // on below lines we are getting data which
         // we passed in our adapter class.
-        Name = getIntent().getStringExtra("name");
-        RollNo = getIntent().getStringExtra("RollNo");
+//        Name = getIntent().getStringExtra("name");
+//        RollNo = getIntent().getStringExtra("RollNo");
 
 
         // setting data to edit text
         // of our update activity.
-        NameEdt.setText(Name);
-        RollEdt.setText(RollNo);
+//        NameEdt.setText(Name);
+//        RollEdt.setText(RollNo);
 
 
         // adding on click listener to our update course button.

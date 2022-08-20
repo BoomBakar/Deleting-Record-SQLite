@@ -2,9 +2,11 @@ package haqnawaz.org.a20220815db;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.Editable;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
@@ -72,6 +74,21 @@ public class MainActivity extends AppCompatActivity {
                     Toast.makeText(MainActivity.this,"Record deleted",Toast.LENGTH_SHORT).show();
                 else
                     Toast.makeText(MainActivity.this,"ID not found",Toast.LENGTH_SHORT).show();
+            }
+        });
+        listViewStudent.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+
+                Intent i = new Intent(getApplicationContext(), UpdateCourseActivity.class);
+
+                // below we are passing all our values.
+//                i.putExtra("name", );
+//                i.putExtra("RollNo", modal.getCourseDescription());
+
+
+                // starting our activity.
+               getApplicationContext().startActivity(i);
             }
         });
 
