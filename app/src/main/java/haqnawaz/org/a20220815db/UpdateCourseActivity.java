@@ -51,7 +51,7 @@ public class UpdateCourseActivity extends AppCompatActivity {
 
                 // inside this method we are calling an update course
                 // method and passing all our edit text values.
-                dbHandler.updateCourse(courseName, courseNameEdt.getText().toString(), courseDescriptionEdt.getText().toString(), courseTracksEdt.getText().toString(), courseDurationEdt.getText().toString());
+                dbHandler.updateCourse(NameEdt.getText().toString(), Integer.parseInt(RollEdt.getText().toString()));
 
                 // displaying a toast message that our course has been updated.
                 Toast.makeText(UpdateCourseActivity.this, "Course Updated..", Toast.LENGTH_SHORT).show();
